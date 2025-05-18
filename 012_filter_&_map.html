@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filter and map functions</title>
+</head>
+
+<body>
+  <script>
+    const arr1 = [1, -5, 6, -6, 3, 4, -8, 2, 8];
+    //filter used to return an element which satisfy the condition.
+    arr1.filter((element, index) => {
+      element < 0 ? console.log(element) : false;
+    });
+    // map is used as forEach or transform an array values to another array
+    arr1.map((value, index) => {
+      console.log(`${index}, ${value + 10}`);
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RSP with CSS</title>
+<link rel="stylesheet" href="css/010_style.css">
+</head>
+
+<body>
+  <p>Rock paper scisor project</p>
+  <button class="rock" id="move" onclick="clickFunc('rock')"><img src="icons/rock.jpeg" alt="Rock"></button>
+  <button class="paper" id="move" onclick="clickFunc('paper')"><img src="icons/Paper.png" alt="Paper"></button>
+  <button class="scissor" id="move" onclick="clickFunc('scissor')"><img src="icons/Scissor.png" alt="Scissor"></button>
+  <button class="reset" id="reset" onclick="resetScore()">Reset Score</button>
+  <div class="result" id="result">
+  </div>
+  <div class="score" id="score">
+  </div>
+  
+
+  <script src="js/010_script.js"></script>
+</body>
+
+</html>

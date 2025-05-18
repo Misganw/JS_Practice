@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors</title>
+</head>
+<body>
+  <p>Rock paper scisor project</p>
+  <button class="rock" id="rock" onclick="clickFunc('rock')">Rock</button>
+  <button class="paper" id="paper" onclick="clickFunc('paper')">Paper</button>
+  <button class="scissor" id="scissor" onclick="clickFunc('scissor')">Scissor</button>
+  <div class="result" id="result">
+  
+  </div>
+
+  <script>
+      
+        function computerMove() {
+          const randNumber = Math.random();
+          let computerMove = '';
+          if (randNumber >= 0 && randNumber <= 1 / 3) {
+            computerMove = 'rock';
+          }
+          else if (randNumber >= 1 / 3 && randNumber <= 2 / 3) {
+            computerMove = 'paper';
+          }
+          else if (randNumber >= 2 / 3 && randNumber <= 1) {
+            computerMove = 'scissor';
+          }
+
+          return computerMove;
+        }
+
+  function clickFunc(param){
+    let result=''
+  if(param==='rock')
+  {
+    if (computerMove()==='rock') {
+      result='win';
+    }
+    else if (computerMove() === 'paper') {
+      result = 'loss';
+    }
+    else if (computerMove() === 'scissor') {
+      result = 'Tie';
+    }
+  }
+    else if (param === 'paper') {
+      if (computerMove() === 'rock') {
+      result = 'loss';
+    }
+    else if (computerMove() === 'paper') {
+      result = 'win';
+    }
+    else if (computerMove() === 'scissor') {
+      result = 'Tie';
+    }
+    }
+      else if (param === 'scissor') {
+      if (computerMove() === 'rock') {
+      result = 'loss';
+    }
+    else if (computerMove() === 'paper') {
+      result = 'Tie';
+    }
+    else if (computerMove() === 'scissor') {
+      result = 'win';
+    }
+    }
+    //alert('You picked '+param+'  '+ 'Computer picked '+ computerMove()+' '+ result);
+    const res= `You picked ${param } Computer picked ${computerMove()}. So,${result}!!.`;
+    document.getElementById('result').innerHTML = res;
+}
+
+  </script>
+</body>
+</html>

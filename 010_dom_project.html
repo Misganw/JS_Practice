@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Projects with CSS</title>
+  <style>
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .subscribe{
+      background-color: black;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 15px;
+      border: none;
+      border-radius: 30px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 15px;
+      padding-right:15px;
+      color: white;
+    }
+    .greenButton{
+      background-color: green;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 15px;
+      padding-right:15px;
+      color: white;
+      cursor: pointer;
+    }
+    .calculatTax{
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 8px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 5px;
+      padding-right:5px;
+    }
+    .calculate{
+      background-color: rgb(32, 201, 32);
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      border: none;
+      font-size: 18px;
+      border-radius: 8px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 15px;
+      padding-right:15px;
+
+    }
+    .showResult{
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>You tube Subscribe button</h2>
+  <button class="subscribe">Subscribe</button>
+  <div class="shipi">
+    <h2>Amazon Shipping calculator</h2>
+    <h3>Order under $40 = +$10 Shipping</h3>
+    <h3>Order over $40 = Free shipping</h3>
+  </div>
+ <input type="text" class="calculatTax" onkeydown="handleKeyDown()">
+ <button class="calculate">Calculate</button>
+ <div class="showResult"></div> 
+  <script>
+    const buttonSubscribe = document.querySelector('.subscribe');
+    buttonSubscribe.addEventListener('click',()=>{
+      if(buttonSubscribe.innerHTML === 'Subscribed'){
+        buttonSubscribe.innerHTML = 'Subscribe';
+        buttonSubscribe.classList.remove('greenButton');
+      }
+      else{
+          buttonSubscribe.innerHTML='Subscribed';
+          buttonSubscribe.classList.add('greenButton');
+      }
+      
+    });
+
+    function handleKeyDown(){
+      if (event.key === 'Enter') {
+        calculatTax();
+      }
+    }
+    function calculatTax(){
+        let tax = Number(document.querySelector('.calculatTax').value);
+        if (tax < 40) {
+          tax += 10;
+          document.querySelector('.showResult').innerHTML = `$${tax}`;
+        }
+        else if (tax > 40) {
+          document.querySelector('.showResult').innerHTML = 'Free shipping';
+        }
+    }
+    const buttonCalculate = document.querySelector('.calculate');
+      buttonCalculate.addEventListener('click', (event) => {
+        let tax=Number(document.querySelector('.calculatTax').value);
+        if(tax<40){
+          tax+=10;
+          document.querySelector('.showResult').innerHTML = `$${tax}`;
+        }
+        else if(tax>40){
+          document.querySelector('.showResult').innerHTML = 'Free shipping';
+        }
+        // window.open();
+      });
+    // document.title='Dom Practice';
+    // document.body.innerHTML='<button> Click me!</button>';
+    
+  </script>
+</body>
+
+</html>

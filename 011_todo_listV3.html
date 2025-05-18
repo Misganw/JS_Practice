@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To do list project V3</title>
+  <style>
+    button {
+      padding: 8px;
+      color: white;
+    }
+
+    input {
+      padding: 8px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      margin-left: 5px;
+    }
+
+    .addTask {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      margin-left: 5px;
+      background-color: rgb(6, 85, 6);
+      border: none;
+    }
+
+    .todoListView {
+      display: grid;
+      grid-template-columns: 200px 150px 100px;
+      padding-top: 8px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      row-gap: 5px;
+      align-items: center;
+    }
+
+    .taskType,
+    .taskDate {
+      width: 200px;
+      padding-top: 8px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      font-weight: bold;
+      margin-left: 5px;
+    }
+
+    .deletebtn {
+      width: 100px;
+      margin-left: 1px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      background-color: rgb(132, 6, 6);
+      border: none;
+      padding: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>To do list practice two</h2>
+  <input type="text" class="todolist">
+  <input type="date" class="todoDate">
+  <button class="addTask">Add</button>
+  <div class="todoListView"></div>
+  <script>
+    let display = '';
+    let taskList = [{
+      task: 'Defualt',
+      date: 'Defualt'
+    }];
+    const addtask = document.querySelector('.addTask');
+    addtask.addEventListener('click', () => {
+      const tasks = document.querySelector('.todolist').value;
+      const dates = document.querySelector('.todoDate').value;
+      taskList.push({ task: tasks, date: dates });
+      //console.log(taskList);
+      toDoListFunc();
+    });
+    function toDoListFunc() {
+      let taskHTML = '';
+      taskList.forEach((element, index) => {
+        taskHTML += `
+        <div class="taskType">${element.task}</div
+          ><div class="taskDate">${element.date}</div> 
+          <button class="deletebtn" onclick="taskList.splice(${index},1);toDoListFunc();"
+          >Delete</button>
+          `;
+      });
+      document.querySelector('.todoListView').innerHTML = taskHTML;
+    }
+
+  </script>
+</body>
+
+</html>

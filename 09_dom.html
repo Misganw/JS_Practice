@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM </title>
+</head>
+
+<body>
+  <button class="first_btn">Click me</button>
+  <button class="first_btn">Click me</button>
+
+  <script>
+   const button = document.querySelectorAll('.first_btn');
+   button[0].innerHTML = 'click me first';
+   button[1].innerHTML = 'click me second';
+  // document.title='Dom Practice';
+  // document.body.innerHTML='<button> Click me!</button>';
+  </script>
+</body>
+
+</html>

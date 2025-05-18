@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To di list project 1</title>
+
+</head>
+
+<body>
+  <h2>To do list practice one</h2>
+  <input type="text" class="todolistOne">
+  <button class="todoOne">Add</button>
+  <script>
+    const inputOne = document.querySelector('.todolistOne').value;
+    const arrayOne = [];
+    document.querySelector('.todoOne').addEventListener('click', () => {
+      arrayOne.push(inputOne);
+      console.log(arrayOne);
+    }); 
+  </script>
+</body>
+
+</html>
